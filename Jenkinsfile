@@ -4,7 +4,7 @@ remote.host = "54.255.216.185"
 remote.allowAnyHosts = true
 
 node {
-    withCredentials([sshUserPrivateKey(credentialsId: 'ec2-mid-project-key', keyFileVariable: 'identity', passphraseVariable: '', usernameVariable: 'ubuntu')]) {
+    withCredentials([sshUserPrivateKey(credentialsId: 'ec2-key', keyFileVariable: 'identity', passphraseVariable: '', usernameVariable: 'ubuntu')]) {
         remote.user = ubuntu
         remote.identityFile = identity
         stage("Connect EC2") {
