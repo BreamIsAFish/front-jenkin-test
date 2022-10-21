@@ -12,6 +12,12 @@ node {
             sshCommand remote: remote, command: 'whoami'
             sshCommand remote: remote, command: 'pwd'
         }
+        stage("Show success") {
+          sshCommand remote: remote, command: '''
+                 cd c2fit
+                 mkdir success
+             '''
+        }
         // stage("Pull Service") {
         //     sshCommand remote: remote, command: '''
         //         cd ci-cd-with-jenkins
